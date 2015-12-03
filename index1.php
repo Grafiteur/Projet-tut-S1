@@ -64,14 +64,34 @@
                               </ol>
                           </ol>
                       </div>
+                      <div class="niva">1. Mon premier titre est ici</div>
+                      <p>une petite intro bla bla une petite intro bla bla une petite intro bla bla une petite intro bla bla une petite intro bla
+                          bla une petite intro bla bla une petite intro bla bla une petite intro bla bla</p>
+                      <div class="nivb">1. Mon 2nd titre est ici</div><br/>
+                      <div class="nivc">1. Mon 3eme titre est ici</div>
+                      <p>Mon texte est ici je parle de ma partie et blabla et blabla Mon texte est ici je parle de ma partie et blabla
+                          et blabla Mon texte est ici je parle de ma partie et blabla et blabla Mon texte est ici je parle de ma partie et
+                          blabla et blabla Mon texte est ici </p> <p>je parle de ma partie et blabla et blabla Mon texte est ici je parle de ma partie
+                          et blabla et blabla Mon texte est ici je parle de ma partie et blabla et blabla Mon texte est ici je parle de ma partie
+                          et blabla et blabla Mon texte est ici je parle de ma partie</p> <p> et blabla et blabla Mon texte est ici je parle de ma partie
+                          et blabla et blabla Mon texte est ici je parle de ma partie et blabla et blabla Mon texte est ici je parle de ma partie
+                          et blabla et blabla </p>
+                      <div class="nivc">1. Mon 3eme titre est ici</div>
+                      <p>Mon texte est ici je parle de ma partie et blabla et blabla Mon texte est ici je parle de ma partie et blabla
+                          et blabla Mon texte est ici je parle de ma partie et blabla et blabla Mon texte est ici je parle de ma partie et
+                          blabla et blabla Mon</p> <p>texte est ici je parle de ma partie et blabla et blabla Mon texte est ici je parle de ma partie
+                          et blabla et blabla Mon texte est ici je parle de ma partie et blabla et </p> <p>blabla Mon texte est ici je parle de ma partie
+                          et blabla et blabla Mon texte est ici je parle de ma partie et blabla et blabla Mon texte est ici je parle de ma partie
+                          et blabla et blabla Mon texte est ici je parle de ma partie et blabla et blabla Mon texte est ici je parle de ma partie
+                          et blabla et blabla </p>
                   </div>
               </div>
               <nav id="three">
                   <div id="menu2">
                   <include type="modules" name="mainNav" style="xhtml" />
                 <ul id="navigation">
-                <img class="img3" src="images/bloc.png" width="156px" height="17px" />
-                <img class="bas" src="images/basv3.png" />
+                <img class="img3" src="images/bloc.png" />
+                <img class="img4" src="images/basv3.png" />
                 <li><a href="#" title="Retour à l'accueil">Accueil</a></li>
                 <li class="toggleSubMenu"><span>Base de données</span>
                     <ul class="subMenu">

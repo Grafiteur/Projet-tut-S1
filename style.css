@@ -1,13 +1,12 @@
 @font-face {
-	font-family: monotoon;
+	font-family: monotoon; /* la police qu'on va importer pour qu'elle soit présente a travers toutes les plateformes */
 	src:url('./fonts/monotoon_kk.ttf') format('truetype'),
 	url('./fonts/monotoon_kk.eot?#iefix') format('embedded-opentype'),
 	url('./fonts/monotoon_kk.woff') format('woff'),
 	url('./fonts/monotoon_kk.woff2') format('woff2'),
 	url('./fonts/monotoon_kk.svg#monotoon_kkregular') format('svg');}
 
-.p {
-	font: normal 200% monotoon, impact ;}
+
 
 .important {
 	text-align: center; }
@@ -22,12 +21,12 @@ footer {
 	color: #898989;}
 
 body {
-	font: normal 200% monotoon, impact, Arial, Helvetica, sans-serif;
+	font-style: monotoon;
 	color: #FFF;
 	background: black url(images/pattern.jpg);
 }
 .submenu {
-	font: normal 150% monotoon, impact, Arial, Helvetica, sans-serif;
+	font: normal 300% monotoon, impact, Arial, Helvetica, sans-serif;
 
 }
 
@@ -45,10 +44,10 @@ header {
 #slogan {
 	text-decoration: none;
 	color :black ;
-	font: bold 110% monotoon, impact, Arial, Helvetica, sans-serif;
+	font: bold 220% monotoon, impact, Arial, Helvetica, sans-serif;
 }
 
-#principal, header, #banner, #menu, .menu2, #text, #site_content, footer, #content_grey, nav {
+#principal, header, #banner, #menu, #text, #site_content, footer, #content_grey, nav {
 	margin-left: auto; 
  	margin-right: auto;}
 
@@ -81,9 +80,12 @@ footer a:hover {
 	outline: none;
 	text-decoration: none;
 }
+
 #bas a{
-	font: normal 90% monotoon,Arial, sans-serif;
 	color: #898989;
+}
+#bas {
+	font: normal 180% monotoon;
 }
 #menu /* adaptation avec l'encrage */{
 	width: 990px;
@@ -118,7 +120,7 @@ ul#nav li  /* mettre la barre de navigation en ligne */{
 	background: transparent;
 }
 ul#nav li a /* mise en forme et coloration */{
-	font: bold 100% monotoon;
+	font: bold 200% monotoon;
 	height: 24px;
 	margin: 10px 0 0 0;
 	padding: 6px 20px 6px 20px;
@@ -185,7 +187,8 @@ ul#nav li:hover ul, #nav li.sfhover ul { /* listes imbriquées sous les items de
 	float: left;}
 
 #oneIn { /* zone d'écriture colonne 1 */
-	width: 765px;
+	width: 725px;
+	margin-left: 20px;
 	height: 100%;
 	float: left;}
 
@@ -239,7 +242,7 @@ ul.slideshow li {
 ul.slideshow li.show {
 	z-index: 500;}
  
-.img img {
+.img img {  /* image leurre pour avoir un lien car la zone de travail de la banière du top dépasse dans sa jointure avec le menu latéral et aurait perturber la partie haute du site */
 	border-style: solid;
 	padding: 0;
 	z-index:2;
@@ -249,17 +252,26 @@ ul.slideshow li.show {
 	border-style: double solid double solid; 
 	border-radius: 50px 230px 0px 50px;}
 
-.img2 {
-	margin-left:0.82em;
-	margin-top:-230px;
+.img2 { /* bannière du top */
+	margin-left:1.65em;
+	margin-top:-229px;
 	position:absolute;
 	z-index:-1;}
 
-.img3{
+.img3{ /* décoration du menu latéral */
 	margin-left:-78px;
 	margin-top:-40px;
+	width:156px;
+	height: 14px;
 	position:absolute;
 	z-index:6;}
+
+.img4 {  /* image du menu latéral */
+	position:absolute; 
+	z-index:-2;
+	margin-left:-90px;
+	margin-top:-88px;}
+	}
 
 #slideshow-caption {
 	width: 1000px;
@@ -296,7 +308,7 @@ ul.slideshow li.show {
 	margin-left:-1px;
 	color: black;
 	text-decoration: none;
-background: -moz-linear-gradient(top, rgba(244,213,195,1) 0%, rgba(255,150,150,1) 100%);}
+	background: -moz-linear-gradient(top, rgba(244,213,195,1) 0%, rgba(255,150,150,1) 100%);}
 
 #navigation .toggleSubMenu a, #navigation .toggleSubMenu span {
 background: -moz-linear-gradient(top, rgba(244,213,195,1) 0%, rgba(255,150,150,1) 100%);}
@@ -312,7 +324,7 @@ background: -moz-linear-gradient(top, rgba(244,213,195,1) 0%, rgba(255,150,150,1
 
 #navigation .subMenu {
 	list-style: none;
-	font: bold 90% monotoon;
+	font: bold 180% monotoon;
 	margin: 0;
 	padding: 0;}
 
@@ -336,7 +348,7 @@ background: -moz-linear-gradient(top, rgba(244,213,195,1) 0%, rgba(255,150,150,1
 #sommaire a{
 	text-decoration: none;
 	color:#0645AD;
-	font: bold 70% monotoon;
+	font: bold 140% monotoon;
 }
 
 .hide a{
@@ -355,31 +367,46 @@ background: -moz-linear-gradient(top, rgba(244,213,195,1) 0%, rgba(255,150,150,1
 	padding-left: 30px;
 	border: 1px solid grey;
 }
-.bas{
-	position:absolute;
-	z-index:-2;
-	margin-left:-90px;
-	margin-top:-88px;}
 
 ul#navigation li a /* mise en forme et coloration */{ 
 	text-shadow: 1px 1px #898989;
-	font: bold 85% monotoon;}
+	font: bold 170% monotoon;}
 
 span.titre a {
 	position:absolute;
-	font: bold 270% monotoon;
+	font: bold 500% monotoon;
 	margin:-200px 0 0 200px;
 	text-decoration: none;
 	color:black;
 }
 span.stitre a {
 	position:absolute;
-	font: bold 70% monotoon;
+	font: bold 140% monotoon;
 	margin:-110px 0 0 100px;
 	text-decoration: none;
 	color:black;
 	text-align:center;
 	height: 30px;}
+
+.niva {
+	font: 900 220% monotoon;
+	margin-top: 15px;
+	margin-bottom:20px;
+}
+.nivb{
+	font: bold 190% monotoon;
+	font-weight:900;
+	margin-bottom:15px;
+}
+.nivc {
+	font: bold 160% monotoon;
+	margin-bottom:10px;
+}
+p {
+	text-align: justify;
+	text-indent:30px;
+	font: normal 160% monotoon;
+}
 
 /*
 h1 : titre de page : interdit dans une section
