@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8"/>
+  <title>Notre site</title>
+  <meta name="description" content="..."/>
+  <meta name="keywords" content="..."/>
+  <link rel="stylesheet" type= "text/css" href="style.css"/>
+  <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+  <script language="javascript">function popupGS() {window.open('http://www.google.fr','gs','Width=550,height=535,scrollbars=yes,resizable=yes');}</script>
+    <script language="javascript">
+    sfHover = function() {
+        var sfEls = document.getElementById("nav").getElementsByTagName("LI");
+        for (var i=0; i<sfEls.length; i++) {
+            sfEls[i].onmouseover=function() {
+                this.className+=" sfhover";
+            }
+            sfEls[i].onmouseout=function() {
+                this.className=this.className.replace(new RegExp(" sfhover\\b"), "");
+            }
+        }
+    }
+    if (window.attachEvent) window.attachEvent("onload", sfHover);
+    </script>
+    <script language="javascript">
+    function visibilite(thingId) {
+        var targetElement;
+        targetElement = document.getElementById(thingId) ;
+        if (targetElement.style.display == "none") {
+        targetElement.style.display = "" ;
+        } else {
+        targetElement.style.display = "none" ;
+        }
+    }
+    </script>
+</head>
+
+<body> 
+  <div id="principal">
+    <header>
+	<a class="img" href="#"><img src="images/home_1.png" />
+	</a>
+	<span class="titre"> <a href="#"> DATAQUE </a></span>
+	<span class="stitre"> <a href="#">&#8658; Information sur les base de données et son application <br/> dans le datascientisme </a></span>
+	<img class="img2" src="images/classeur.png" />
+
+         
+    </header>
+    
+    <nav>
+    	<div id="menu">
+      		<ul id="nav">
+          		<li class="actuel"><a href="#">Accueil</a></li>
+          		<li><a href="#">Bases de données</a></li>
+                    <!-- <ul>
+                        <li><a href="#">Présentation</a></li>
+                        <li><a href="#">Exploitation</a></li>
+                        <li><a href="#">Cours PHP+MySQL</a></li>
+
+                    </ul> -->
+                <li><a href="#">Oracle</a></li>
+                    <!-- <ul>
+                        <li><a href="#">Information</a></li>
+                        <li><a href="#">Interview</a></li>
+
+                </ul> -->
+          		<li><a href="#">À propos de</a></li>&nbsp&nbsp&nbsp&nbsp&nbsp
+          		<a id=slogan href="http://ideeslogan.com">Brique par brique vers l'avenir !</a>
+        	</ul>
+        </div><!--fermer le menu-->  
+      
+    </nav>
+
+    <div id="text">
+      <div id="wrapper">
+          <div id="one">
+              <div id="oneIn"> <!-- paragraphe principal -->
+                  <p class="hide">Sommaire <a href="" onclick="javascript:visibilite('sommaire'); return false;">{Masquer}</a></p>
+                  <div id="sommaire" style="display:;">
+                      <ol style="list-style-type:upper-roman;">
+                          <li><a href="">Les listes à puces</a></li>
+                          <ol style="list-style-type:arabic-numbers;">
+                              <li><a href="">Les styles de puces</a></li>
+                              <li><a href="">Personnaliser ses puces</a></li>
+                              <li><a href="">Supprimer les puces</a></li>
+                          </ol>
+                          <li><a href="">Les listes numérotées</a></li>
+                          <ol style="list-style-type:arabic-numbers;">
+                              <li><a href="">Démarrer la numérotation avec START</a></li>
+                              <li><a href="">Les styles de numérotation</a></li>
+                              <ol style="list-style-type:lower-alpha;">
+                                  <li><a href="">arabic-numbers</a></li>
+                                  <li><a href="">lower-alpha</a></li>
+                                  <li><a href="">upper-alpha</a></li>
+                                  <li><a href="">lower-roman</a></li>
+                                  <li><a href="">upper-roman</a></li>
+                              </ol>
+                              <li><a  href="">Supprimer la numérotation</a></li>
+                          </ol>
+                      </ol>
+                  </div>
+              </div>
+          </div>
+<!--      <div id="two">
+              <div id="twoIn">
+              </div>
+          </div> -->
+          <nav id="three">
+              <div id="menu2">
+              <jdoc:include type="modules" name="mainNav" style="xhtml" />
+		    <ul id="navigation">
+			<img class="img3" src="images/bloc.png" width="156px" height="17px" />
+			<img class="bas" src="images/basv3.png" />
+			<li><a href="#" title="Retour à l'accueil">Accueil</a></li>
+			<li class="toggleSubMenu"><span>Base de données</span>
+			    <ul class="subMenu">
+
+				<li><a href="" title="">Présentation</a></li>
+				<li><a href="" title="">Exploitation</a></li>
+				<li><a href="" title="">Cours PHP+MySQL</a></li>
+
+
+			    </ul>
+			</li>
+			<li class="toggleSubMenu"><span>Oracle</span>
+			    <ul class="subMenu">
+				<li><a href="" title="">Informations</a></li>
+				<li><a href="" title="">Interview</a></li>
+
+			    </ul>
+			</li>
+			<li><a href="" title="">À propos</a></li>
+		    </ul>
+              </div>
+          </nav>
+      </div>
+    </div><!--fermer le text-->  
+
+    <footer>
+    <div id="bas">
+      <a href="index.html">Accueil</a> | 
+      <a href="#">Qui nous sommes ?</a> |
+      <a href="#">Contact</a><br/>
+      <a href="#">Images</a> | Copyright © : 2015
+      <a href="#"> le boss</a> |
+      <a href="javascript:popupGS();">Music</a>
+    </div>
+   </footer>
+  </div><!--fermer div principal-->
+
+  <script type="text/javascript" src="js/menu_accordeon.js"></script>
+  <script type="text/javascript" src="js/menu_glissant.js"></script>
+  <script type="text/javascript" src="js/image_slide.js"></script>
+  <script type="text/javascript" src="js/jquery-1.7.1.js"></script>
+
+</body>
+</html>

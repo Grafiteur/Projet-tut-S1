@@ -1,0 +1,384 @@
+@font-face {
+	font-family: monotoon;
+	src:url('./fonts/monotoon_kk.ttf') format('truetype'),
+	url('./fonts/monotoon_kk.eot?#iefix') format('embedded-opentype'),
+	url('./fonts/monotoon_kk.woff') format('woff'),
+	url('./fonts/monotoon_kk.woff2') format('woff2'),
+	url('./fonts/monotoon_kk.svg#monotoon_kkregular') format('svg');}
+
+.p {
+	font: normal 200% monotoon, impact ;}
+
+.important {
+	text-align: center; }
+
+footer {
+	height: 50px;
+	padding-bottom: 30px;
+	font-weight: bold;
+	width: 500px;
+	text-align: center; 
+	text-shadow: 1px 1px #000;
+	color: #898989;}
+
+body {
+	font: normal 200% monotoon, impact, Arial, Helvetica, sans-serif;
+	color: #FFF;
+	background: black url(images/pattern.jpg);
+}
+.submenu {
+	font: normal 150% monotoon, impact, Arial, Helvetica, sans-serif;
+
+}
+
+footer, header .menu2 { 
+	display:block;
+}
+
+header {
+	width: 1040px;
+	position: relative;
+	padding: 15px 0 0 0;
+	background: transparent;
+	height: 160px;}
+
+#slogan {
+	text-decoration: none;
+	color :black ;
+	font: bold 110% monotoon, impact, Arial, Helvetica, sans-serif;
+}
+
+#principal, header, #banner, #menu, .menu2, #text, #site_content, footer, #content_grey, nav {
+	margin-left: auto; 
+ 	margin-right: auto;}
+
+#principal {
+	height: 2000px;
+	width: 1050px;
+}
+
+#text { /* retirer margin pour centrer auto */
+	background: transparent url(./images/grid.jpg) repeat;
+	border: 5px solid #000;
+	margin-top: 50px;
+	padding-right: 0;
+	position:relative;
+	z-index:2;
+	width: 990px;
+	height: 2000px;
+	border-radius: 100px 0 100px 100px; /* CSS3 */
+}
+nav /* adaptation au reste de la page */{
+	width: 990px;
+	height: 50px;
+}
+ul#nav {
+	margin:0;
+}
+footer a:hover {
+	color: black;
+	background: transparent;
+	outline: none;
+	text-decoration: none;
+}
+#bas a{
+	font: normal 90% monotoon,Arial, sans-serif;
+	color: #898989;
+}
+#menu /* adaptation avec l'encrage */{
+	width: 990px;
+	height: 57px;
+	padding-right: 0;
+	padding-bottom:10px;
+	margin:115px 20px 0 0;
+	background: transparent url(./images/transparent.png) repeat;
+	border: 5px #000;
+	border-style: solid; 
+	text-align: center;
+	border-radius: 500px 0 0 500px; /* CSS3 */
+	-moz-border-radius: 500px 0 0 500px; /*mozilla vielles versions*/
+	-webkit-border: 500px 0 0 500px; /*chrome et safari vielles versions*/
+}
+ul /* axe y */{
+	margin: 2px 0 22px 30px;
+	line-height: 1.7em;
+	font-style: normal;
+	font-size: 100%;
+}
+ul#nav {
+	margin:0;
+}
+ul#nav li  /* mettre la barre de navigation en ligne */{
+	padding: 0 0 0 0;
+	list-style: none;
+	margin: 2px 0 0 0;
+	display: inline;
+	text-align: center;   
+	background: transparent;
+}
+ul#nav li a /* mise en forme et coloration */{
+	font: bold 90% monotoon;
+	height: 24px;
+	margin: 10px 0 0 0;
+	padding: 6px 20px 6px 20px;
+	background: transparent; 
+	text-align: center;
+	text-shadow: 1px 1px #898989;
+	color: #323232;
+	text-decoration: none;
+}
+.entete /* l'objet */{
+	width: 1000px;
+	margin: 0 0 0 -64px ;
+	text-align: center;
+	padding: 0 0 10px 20px;
+	background: transparent url(./images/transparent.png) repeat;
+	border: 24px #000;
+	border-style: double solid double solid; 
+	border-radius: 500px 500px 500px 500px; /* CSS3 */
+	-moz-border-radius: 500px 500px 500px 500px; /*mozilla vielles versions*/
+	-webkit-border: 500px 500px 500px 500px; /*chrome et safari vielles versions*/
+	box-shadow: 5px 5px 15px rgba(0,0,0,0.6);}
+
+
+
+ul#nav li.actuel a, ul#nav li:hover a{
+	text-shadow: 2px 2px #898989;
+	color: #323232;
+	border-radius: 7px 7px 7px 7px;
+	-moz-border-radius: 7px 7px 7px 7px;
+	-webkit-border: 7px 7px 7px 7px;}
+
+ul#nav li.actuel a{
+	padding-bottom:15px;
+	background: transparent url(./images/transparent1.png) repeat;}
+
+ul#nav li:hover a{
+		padding-bottom:15px;
+		color:white;
+	background: transparent url(./images/transparent.png) repeat;}
+ul#nav a {
+	padding-bottom:15px;
+	display: inline-block;
+}
+ul#nav li ul { /* listes de deuxième niveau */
+	position: absolute;
+	left: -999em; /* on met left plutôt que display pour cacher les menus parce que display: none n'est pas lu par les lecteurs d'écran */
+}
+ul#nav li:hover ul, #nav li.sfhover ul { /* listes imbriquées sous les items de listes survolés */
+	left: auto;
+}
+
+
+
+#wrapper { /* zone de travail des 2/x colonnes */
+	width: 1000px;
+	margin: auto;
+	height: 200px;
+	color: black;}
+
+#one { /* block de la colonne 1 */
+	width: 765px;
+	height: 200px;
+	margin: 0;
+	float: left;}
+
+#oneIn { /* zone d'écriture colonne 1 */
+	width: 765px;
+	height: 100%;
+	float: left;}
+
+#two {
+	width: 642px;
+	height: 200px;
+	margin: 0;
+	float: left;}
+
+#twoIn {
+	width: 235px;
+	height: 100%;
+	background: white;
+	margin: 0 auto;}
+
+#three { /* block de la colonne latérale de droite */
+	width: 205px; /* modif menu latéral quand est au top */
+	height: 200px;
+	margin-top: -2px;
+	float: left;}
+
+#menu2 { /* zone d'édition colonne latérale de droite */
+	width: 205px; /* modif menu latéral flotable */
+	height: 322px;
+	z-index:5;
+	float: right;
+
+	text-align: center;
+	padding-top: 55px;}
+
+#menu2.floatable {
+	position: fixed;
+	top: 0;
+	float: right;}
+
+ul.slideshow {
+	list-style: none;
+	width: 1000px;
+	height: 300px;
+	overflow: hidden;
+	position: relative;
+	margin: 0;}
+
+ul.slideshow li {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	left: 0;
+	right: 0;}
+ 
+ul.slideshow li.show {
+	z-index: 500;}
+ 
+.img img {
+	border-style: solid;
+	padding: 0;
+	z-index:2;
+	border: 25px #000;
+	width:990px;
+	height:200px;
+	border-style: double solid double solid; 
+	border-radius: 50px 230px 0px 50px;}
+
+.img2 {
+	margin-left:0.82em;
+	margin-top:-230px;
+	position:absolute;
+	z-index:-1;}
+
+.img3{
+	margin-left:-78px;
+	margin-top:-40px;
+	position:absolute;
+	z-index:6;}
+
+#slideshow-caption {
+	width: 1000px;
+	height: 38px;
+	position: absolute;
+	bottom: 0;
+	left: 0; 
+	z-index: 500;}
+
+#slideshow-caption .slideshow-caption-container {
+	padding: 10px 25px 10px 25px; 
+	background: transparent url(../images/transparent.png) repeat;  
+	z-index: 1000;}
+
+#slideshow-caption p {
+	padding: 0;
+	font: normal 130% arial, sans-serif;
+	color: #FFF;
+	text-shadow: 1px 1px #000;}
+
+#navigation {
+	margin-top: -10px;
+	margin-left: 0px;
+	padding: 0;
+	float: right;
+	list-style: none;
+	color: black;
+	width: 157px;
+	font: bold 110% monotoon;}
+
+#navigation a, #navigation span {
+	display: block;
+	padding: 4px 10px;
+	margin-left:-1px;
+	color: black;
+	text-decoration: none;
+	background: -moz-linear-gradient(top, rgba(136,136,136,0.7), rgba(170,170,170,0.75));
+/*  background: #666666 url(menu-item.png) left bottom no-repeat; */}
+
+#navigation .toggleSubMenu a, #navigation .toggleSubMenu span {
+	background: -moz-linear-gradient(top, rgba(136,136,136,0.7), rgba(170,170,170,0.75));}
+
+#navigation .open a, #navigation .open span {
+	background: -moz-linear-gradient(top, rgba(136,136,136,0.7), rgba(170,170,170,0.75));}
+
+#navigation a:hover, #navigation a:focus, #navigation a:active {
+	text-decoration: none;}
+
+#navigation .subMenu {
+	list-style: none;
+	font: bold 90% monotoon;
+	margin: 0;
+	padding: 0;}
+
+#navigation ul.subMenu a {
+	background: none;
+	padding: 3px 20px;}
+
+#navigation ul.subMenu a:hover {
+	background: -moz-linear-gradient(top, rgba(221,221,221,0), rgba(221,221,221,0.5));}
+
+#sommaire{
+	margin-top:50px;
+	width:350px;
+	border : 2px solid black;
+	margin-left: 50px;
+	background-color: white
+}
+#sommaire a{
+	text-decoration: none;
+	color:#0645AD;
+	font: bold 70% monotoon;
+}
+
+.hide a{
+	text-decoration: none;
+	font: bold 70% monotoon;
+	color : black;
+}
+.hide {
+	top:80px;
+	position:absolute;
+	margin-top: -25px;
+	margin-left:120px;
+	background-color: white;
+	height: 35px;
+	width:180px;
+	padding-left: 30px;
+	border: 1px solid grey;
+}
+.bas{
+	position:absolute;
+	z-index:-2;
+	margin-left:-90px;
+	margin-top:-88px;}
+
+ul#navigation li a /* mise en forme et coloration */{ 
+	text-shadow: 1px 1px #898989;
+	font: bold 85% monotoon;}
+
+span.titre a {
+	position:absolute;
+	font: bold 270% monotoon;
+	margin:-200px 0 0 200px;
+	text-decoration: none;
+	color:black;
+}
+span.stitre a {
+	position:absolute;
+	font: bold 70% monotoon;
+	margin:-110px 0 0 100px;
+	text-decoration: none;
+	color:black;
+	text-align:center;
+	height: 30px;}
+
+/*
+h1 : titre de page : interdit dans une section
+h2-h6 : titre dans les section
+strong : valoriser un texte
+h2>h3>h4>h5>h6
+navigateur spécialisé : ex :aveugle
+*/
