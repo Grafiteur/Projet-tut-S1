@@ -110,6 +110,7 @@ ul#nav {
 }
 ul#nav li  /* mettre la barre de navigation en ligne */{
 	padding: 0 0 0 0;
+
 	list-style: none;
 	margin: 2px 0 0 0;
 	display: inline;
@@ -117,7 +118,7 @@ ul#nav li  /* mettre la barre de navigation en ligne */{
 	background: transparent;
 }
 ul#nav li a /* mise en forme et coloration */{
-	font: bold 90% monotoon;
+	font: bold 100% monotoon;
 	height: 24px;
 	margin: 10px 0 0 0;
 	padding: 6px 20px 6px 20px;
@@ -287,7 +288,7 @@ ul.slideshow li.show {
 	list-style: none;
 	color: black;
 	width: 157px;
-	font: bold 110% monotoon;}
+}
 
 #navigation a, #navigation span {
 	display: block;
@@ -295,17 +296,19 @@ ul.slideshow li.show {
 	margin-left:-1px;
 	color: black;
 	text-decoration: none;
-	background: -moz-linear-gradient(top, rgba(136,136,136,0.7), rgba(170,170,170,0.75));
-/*  background: #666666 url(menu-item.png) left bottom no-repeat; */}
+background: -moz-linear-gradient(top, rgba(244,213,195,1) 0%, rgba(255,150,150,1) 100%);}
 
 #navigation .toggleSubMenu a, #navigation .toggleSubMenu span {
-	background: -moz-linear-gradient(top, rgba(136,136,136,0.7), rgba(170,170,170,0.75));}
+background: -moz-linear-gradient(top, rgba(244,213,195,1) 0%, rgba(255,150,150,1) 100%);}
 
 #navigation .open a, #navigation .open span {
-	background: -moz-linear-gradient(top, rgba(136,136,136,0.7), rgba(170,170,170,0.75));}
+background: -moz-linear-gradient(top, rgba(244,213,195,1) 0%, rgba(255,150,150,1) 100%);}
 
 #navigation a:hover, #navigation a:focus, #navigation a:active {
 	text-decoration: none;}
+#navigation li{
+		font: bold 110% monotoon;
+}
 
 #navigation .subMenu {
 	list-style: none;
@@ -322,10 +325,13 @@ ul.slideshow li.show {
 
 #sommaire{
 	margin-top:50px;
-	width:350px;
+	width:700px;
 	border : 2px solid black;
 	margin-left: 50px;
 	background-color: white
+    -webkit-columns: 2 auto;
+    -moz-columns: 2 auto;
+    columns: 2 auto;
 }
 #sommaire a{
 	text-decoration: none;
