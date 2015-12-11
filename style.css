@@ -136,7 +136,7 @@ ul#nav li a /* mise en forme et coloration */{
 	text-align: center;
 	padding: 0 0 10px 20px;
 	background: transparent url(./images/transparent.png) repeat;
-	border: 24px #000;
+	border: 25px #000;
 	border-style: double solid double solid; 
 	border-radius: 500px 500px 500px 500px; /* CSS3 */
 	-moz-border-radius: 500px 500px 500px 500px; /*mozilla vielles versions*/
@@ -324,7 +324,6 @@ background: -moz-linear-gradient(top, rgba(244,213,195,1) 0%, rgba(255,150,150,1
 
 #navigation .subMenu {
 	list-style: none;
-	font: bold 180% monotoon;
 	margin: 0;
 	padding: 0;}
 
@@ -374,7 +373,7 @@ ul#navigation li a /* mise en forme et coloration */{
 
 span.titre a {
 	position:absolute;
-	font: bold 500% monotoon;
+	font: bold 80px monotoon;
 	margin:-200px 0 0 200px;
 	text-decoration: none;
 	color:black;

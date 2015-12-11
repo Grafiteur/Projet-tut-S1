@@ -96,9 +96,9 @@
                 <li class="toggleSubMenu"><span>Base de données</span>
                     <ul class="subMenu">
 
-                    <li><a href="" title="">Présentation</a></li>
-                    <li><a href="" title="">Exploitation</a></li>
-                    <li><a href="" title="">Cours PHP+MySQL</a></li>
+                        <li><a href="" title="">Présentation</a></li>
+                        <li><a href="" title="">Exploitation</a></li>
+                        <li><a href="" title="">Cours PHP+MySQL</a></li>
 
 
                     </ul>
