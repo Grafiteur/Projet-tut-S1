@@ -47,13 +47,57 @@ header {
 	font: bold 220% monotoon, impact, Arial, Helvetica, sans-serif;
 }
 
-#principal, header, #banner, #menu, #text, #site_content, footer, #content_grey, nav {
+
+
+
+
+
+
+
+
+
+#principal, header, #banner, #menu, #textora, #textbdd, #text, #textacc, #site_content, footer, #content_grey, nav {
 	margin-left: auto; 
  	margin-right: auto;}
 
 #principal {
-	height: 2000px;
+	height: auto;
 	width: 1050px;
+}
+
+#textacc { /* retirer margin pour centrer auto */
+	background: transparent url(./images/grid.jpg) repeat;
+	border: 5px solid #000;
+	margin-top: 50px;
+	padding-right: 0;
+	position:relative;
+	z-index:2;
+	width: 990px;
+	height: 700px;
+	border-radius: 100px 0 100px 100px; /* CSS3 */
+}
+#textora { /* retirer margin pour centrer auto */
+	background: transparent url(./images/grid.jpg) repeat;
+	border: 5px solid #000;
+	margin-top: 50px;
+	padding-right: 0;
+	position:relative;
+	z-index:2;
+	width: 990px;
+	height: 5000px;
+	border-radius: 100px 0 100px 100px; /* CSS3 */
+}
+
+#textbdd { /* retirer margin pour centrer auto */
+	background: transparent url(./images/grid.jpg) repeat;
+	border: 5px solid #000;
+	margin-top: 50px;
+	padding-right: 0;
+	position:relative;
+	z-index:2;
+	width: 990px;
+	height: 10400px;
+	border-radius: 100px 0 100px 100px; /* CSS3 */
 }
 
 #text { /* retirer margin pour centrer auto */
@@ -64,9 +108,11 @@ header {
 	position:relative;
 	z-index:2;
 	width: 990px;
-	height: 2000px;
+	height: 700px;
 	border-radius: 100px 0 100px 100px; /* CSS3 */
 }
+
+
 nav /* adaptation au reste de la page */{
 	width: 990px;
 	height: 50px;
@@ -154,12 +200,15 @@ ul#nav li.actuel a, ul#nav li:hover a{
 
 ul#nav li.actuel a{
 	padding-bottom:15px;
-	background: transparent url(./images/transparent1.png) repeat;}
+	background: transparent url(./images/transparent1.png) repeat;
+}
 
 ul#nav li:hover a{
 		padding-bottom:15px;
 		color:white;
-	background: transparent url(./images/transparent.png) repeat;}
+	background: transparent url(./images/transparent.png) repeat;
+}
+
 ul#nav a {
 	padding-bottom:15px;
 	display: inline-block;
@@ -168,6 +217,7 @@ ul#nav li ul { /* listes de deuxième niveau */
 	position: absolute;
 	left: -999em; /* on met left plutôt que display pour cacher les menus parce que display: none n'est pas lu par les lecteurs d'écran */
 }
+
 ul#nav li:hover ul, #nav li.sfhover ul { /* listes imbriquées sous les items de listes survolés */
 	left: auto;
 }
@@ -184,7 +234,8 @@ ul#nav li:hover ul, #nav li.sfhover ul { /* listes imbriquées sous les items de
 	width: 765px;
 	height: 200px;
 	margin: 0;
-	float: left;}
+	float: left;
+}
 
 #oneIn { /* zone d'écriture colonne 1 */
 	width: 725px;
@@ -271,7 +322,15 @@ ul.slideshow li.show {
 	z-index:-2;
 	margin-left:-90px;
 	margin-top:-88px;}
-	}
+
+
+.img5 { /* les images de la partie écrit */
+	width:50%;
+	height:80%;
+	margin-top: -20px;
+	margin-bottom: -20px;
+	margin-left: 200px;
+}
 
 #slideshow-caption {
 	width: 1000px;
@@ -344,28 +403,28 @@ background: -moz-linear-gradient(top, rgba(244,213,195,1) 0%, rgba(255,150,150,1
     -moz-columns: 2 auto;
     columns: 2 auto;
 }
-#sommaire a{
+#sommaire a {
+	padding-top: 0px;
 	text-decoration: none;
 	color:#0645AD;
 	font: bold 140% monotoon;
 }
-
-.hide a{
+#sommaire1{
+	margin-top:50px;
+	width:350px;
+	border : 2px solid black;
+	margin-left: 50px;
+	background-color: white
+}
+#sommaire1 a {
+	padding-top: 0px;
 	text-decoration: none;
-	font: bold 70% monotoon;
-	color : black;
+	color:#0645AD;
+	font: bold 180% monotoon;
 }
-.hide {
-	top:80px;
-	position:absolute;
-	margin-top: -25px;
-	margin-left:120px;
-	background-color: white;
-	height: 35px;
-	width:180px;
-	padding-left: 30px;
-	border: 1px solid grey;
-}
+
+
+
 
 ul#navigation li a /* mise en forme et coloration */{ 
 	text-shadow: 1px 1px #898989;
@@ -391,22 +450,43 @@ span.stitre a {
 	font: 900 220% monotoon;
 	margin-top: 15px;
 	margin-bottom:20px;
+	text-decoration: underline;
 }
 .nivb{
 	font: bold 190% monotoon;
 	font-weight:900;
 	margin-bottom:15px;
+	text-decoration: underline;
 }
 .nivc {
-	font: bold 160% monotoon;
+	font: bold 180% monotoon;
 	margin-bottom:10px;
+	text-decoration: underline;
 }
 p {
 	text-align: justify;
 	text-indent:30px;
-	font: normal 160% monotoon;
+	font: bold 180% monotoon;
+}
+.gras{
+	font-weight: 900;
+}
+.centre {
+	text-align: center;
 }
 
+#niveaa {
+	font: bold 250% monotoon;
+	text-align: center;
+}
+#nivebb {
+	font: bold 250% monotoon;
+	text-align: center;
+}
+#nivecc {
+	font: bold 250% monotoon;
+	text-align: center;
+}
 /*
 h1 : titre de page : interdit dans une section
 h2-h6 : titre dans les section
