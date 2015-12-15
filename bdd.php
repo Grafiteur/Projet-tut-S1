@@ -1,3 +1,79 @@
+<?php
+
+//si les champs texte on une valeur et si il sont différent de NULL
+if (isset ($_POST['nom'])&& isset($_POST['prenom'])&& isset($_POST['pseudo']) && isset($_POST['adresse']) && isset($_POST['adresse2']) && isset($_POST['mdp']) && isset($_POST['mdp2']))
+{
+    if($_POST['nom'] != NULL AND $_POST['prenom'] != NULL AND $_POST['pseudo'] != NULL AND $_POST['adresse'] != NULL AND $_POST['adresse2'] != NULL AND $_POST['mdp'] != NULL AND $_POST['mdp2'] != NULL)
+    {
+
+        //connection a la base de donnée
+        try
+        {
+            $bdd = new
+            PDO('mysql:host=localhost;dbname=projet_tut;charset=utf8', 'root','');
+            // affiche les erreurs PDO
+            $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        }
+        catch (Exception $e)
+        {
+            die('Erreur : ' . $e->getMessage());
+        }
+    }
+    //initialisation des valeurs des champs du formulaire avec une sécurité "htmlentities"
+    $donnees['nom']= htmlentities($_POST['nom']);
+    $donnees['prenom']= htmlentities($_POST['prenom']);
+    $donnees['pseudo']= htmlentities($_POST['pseudo']);
+    $donnees['adresse']= htmlentities($_POST['adresse']);
+    $donnees['adresse2']= htmlentities($_POST['adresse2']);
+    $donnees['mdp']= htmlentities($_POST['mdp']);
+    $donnees['mdp2']= htmlentities($_POST['mdp2']);
+
+    //initialisation des erreurs
+    //on créé une variale erreur dans laquel on mais le message
+    if (!preg_match("/[a-zA-Z -]{2,}/", $_POST["nom"]))
+    {
+        $erreur['nom'] = "Votre nom doit être composé de 2 caractère au minimum";
+    }
+    if (!preg_match("/[a-zA-Z -]{2,}/", $_POST["prenom"]))
+    {
+        $erreur['prenom'] = "Votre prenom doit être composé de 2 caractère au minimum";
+    }
+    if (!preg_match("/[a-zA-Z -]{2,}/", $_POST["pseudo"]))
+    {
+        $erreur['pseudo'] = "Votre pseudo doit être composé de 2 caractère au minimum";
+    }
+    if (!preg_match('#^([\w\.-]+)@([\w\.-]+)(\.[a-z]{2,4})$#', $_POST["adresse"]))
+    {
+        $erreur['adresse'] = "Rentrez une adresse valide";
+    }
+    if (!preg_match('#^([\w\.-]+)@([\w\.-]+)(\.[a-z]{2,4})$#', $_POST["adresse2"]))
+    {
+        $erreur['adresse2'] = "Rentrez une adresse valide";
+    }
+    if (!preg_match("/[a-zA-Z -]{2,}/", $_POST["mdp"]))
+    {
+        $erreur['mdp'] = "Votre mot de passe doit être composé de 2 caractère au minimum";
+    }
+    if (!preg_match("/[a-zA-Z -]{2,}/", $_POST["mdp2"]))
+    {
+        $erreur['mdp2'] = "Votre mot de passe doit être composé de 2 caractère au minimum";
+    }
+
+    //si les champs erreur sont vide
+    if (!isset($erreur['nom']) && !isset($erreur['prenom']) && !isset($erreur['pseudo']) && !isset($erreur['adresse']) && !isset($erreur['adresse2']) && !isset($erreur['mdp']) && !isset($erreur['mdp2']))
+    {
+
+        // si le champs texte du mot de passe est egale au champs text de la confirmation du mot de passe
+        // idem avec les champs texte adresse
+        if ($_POST['mdp'] = $_POST['mdp2'] AND $_POST['adresse'] = $_POST['adresse2'])
+        {
+            // alors j'insert dans la base de données les informations (nom, prenom, pseudo, adresse, mot de passe)
+            $bdd->exec('INSERT INTO connection (Nom, Prenom, Pseudo, Email, Password) VALUES("'.$_POST ['nom'].'","'.$_POST ['prenom'].'","'.$_POST ['pseudo'].'","'.$_POST ['adresse'].'","'.$_POST ['mdp'].'")');
+            echo "Vous voici enregistrer";//renvoie vers la page d'accueil
+        }
+    }
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -52,12 +128,13 @@
                                           </ol>
                                       <li><a  href="#nivebbe">Politique : Comment barack Obama a t il truqué les elections</a></li>
                                   </ol>
+                              <li><a href="#nivebbbb">Cours php + MySql</a></li>
                           </ol>
                       </div>
                       <p id="niveaa">Partie I Présentaion</p>
 
-                      <p><cite> COMMENT et POURQUOI Les bases de données ont permis une nouvelle vision de la gestion et du stockage de données dans notre societé</cite></p>
-                      <img class="img5" title="" src="images/Serveur_donnees.jpg"/>
+                      <p><cite>Les bases de données ont permis une nouvelle vision de la gestion et du stockage de données dans notre societé</cite></p>
+                      <img class="img6" title="" src="images/Serveur_donnees.jpg"/>
                       <p class="niva" id="niveab"> 1 Qu'est ce qu'une base de données ?</p>
                       <p class="nivb" id="niveaba"> 1.1 Définition</p>
                       <p>Une base de données ,<cite>« data base »</cite> en anglais, est un ensemble structuré dans laquelle il est possible de stocker une  quantité variable de données. Ces données doivent être facilement accessible,exploitable, utilisable par des programmes mais aussi par des utilisateurs différents. Ainsi, la notion de base de données est généralement associé à celle  de réseau, afin de pouvoir mettre en commun ces informations, d'où le nom de base on parle alors souvent de système d'information ou encore système de base de données pour représenter toute la structure regroupant les moyens pour gérer et partager les données. Cette structure comporte souvent un logiciel moteur,que l'on appelle systeme de gestion de base de données et qui permet de manipuler le contenu des bases de données comme par exemple, rechercher, ajouter ou supprimer des enregistrements.</p>
@@ -106,6 +183,7 @@
                       <p>Il y a donc derrière chaque base de données un système d'information , mais aussi un système de gestion pour nous permettre la facilité de l'accès et de la gestion de ces base de données. On comprend aujourd'hui que l'évolution de ces moyens technologique est une nécessité pour notre monde et notre société. Une société, ou les données sont au centre de notre actualité numérique.</p><br><br><br><br>
 
                       <p id="nivebb">Partie II Exploitation</p>
+                      <img class="img6" src="images/politique.jpg"/>
                       <p class="niva" id="nivebba"> 1 Comment gagnent ils  des millions grace à  VOS données ?</p>
                       <p>300 milliards de données stocker en 2013, 600 milliards de dollars dépenser en marketing la même année , avec un marché des données personnelles pesent plus de 300milliard de dollars autant d'exemple pour illustre la place des données dans le marketing . Le marketing peut se définir en deux règles simples  premièrement  l'analyse des besoins du consommateurs  et deuxièmement l'ensemble des moyens utilisés pour influer le client. La jonction entre données et marketing peut paraître complexe à première vue . Quelle lien existe t-il entre le traitement des données et le marketing . Tous d'abord dans une première sous partie nous étudierons l'origine des données d’où elles viennent, ensuite dans la deuxième nous analyserons les principaux  acteurs du marché et pour  nous examinerons les forces et limites des données.</p>
                       <p class="nivb" id="nivebbb"> 1.1 Comment obtiennent-t'ils vos données<p>
@@ -116,21 +194,103 @@
                       <p>On dénombre déjà plus de 15 millions d'objets connectés dans le monde, en 2050 il y en aura plus de 50 millions. La société d'assurance AXA offre un bracelet électronique à ses clients, ce bracelet permet de mesurer  le nombre de calories perdus, le nombre de pas, le rythme cardiaque ou encore le taux d’oxygène dans le sang. L'avantage pour le client de porter le bracelet est qu'il obtient une ristourne  de 100€ sur ses frais d'assurance, si il fais plus de 10 000 pas par jour. Pourquoi récompenser ses assurées? Un assurer en bonne santé, c'est un assureur comblée. Il est donc normal que le client soit récompenser car il est sujet à moins de risque et donc coûte moins chère à l'assureur.</p>
                       <p>Carrefour possède la plus grande bases de données de toute les grandes distributions. À l'aide des cartes de fidélités et l' analyse de la consommation des consommateurs, Carrefour peut déterminer des informations très personnelles de ses clients et donc de mieux satisfaire leurs besoins. Par exemple, si l'on remarque que l'acheteur est une femme et que sa consommation d'alcool à diminuée ces derniers mois nous pouvons en déduire qu'elle est enceinte et lui proposer d' hors et déjà des produis pour sont futur enfant. Le risque que la publicité soit trop ciblée et de rentrer dans l'intimité du consommateur est imminent et donc produit l'effet inverse, ils rebutent le consommateur. Carrefour voulait faire de la pub pour un produit permettant de lutter contre les fuites urinaire, la possibilité de déterminer les personnes atteintes de fuite urinaire était techniquement possible. Il suffisait de corréler les informations suivantes ''achat de lingette, l'age et présence d'une fille ou non à la maison''. Mais cette possibilité n'a pas été réalisé car elle aurait été trop invasif pour le consommateur.</p>
                       <p class="niva" id="nivebbe"> 2. Politique : Comment barack Obama a t il truqué les elections ! <p>
-                      <p>Grâce aux données  américaines, les équipes du président américain Barack Obama pour les élections de 2012 ont influé le cours de l'histoire. </p>
-                      <p>En utilisant le Big Data, le parti démocrate à mieux cibler les ''indécis '' pour s'assurer d'obtenir leurs votes.</p>
-                      <p>Cette étude des données leur à permis à permis d'éviter une augmentation des votes pour le parti républicain.</p>
-                      <p>Comment les équipes de l'actuel président américain se sont ils pris pour gagner les élections ?</p>
-                      <p>L'analyse de tous les réseaux sociaux, à permis un ciblage des votants pour le parti de Barack Obama pour  leurs proposer d'effectuer des dons afin de soutenir le parti en question.</p>
-                      <p>Sans négliger le fait que  la campagne très agressive de l'équipe de Barack Obama à aussi permit ce miracle.</p>
-                      <p>Ville par ville, quartier par quartier, maison par maison, les détracteurs étaient présent et grâce à l’utilisation du Big data et donc les données de géolocalisation, leurs déplacements étais optimisés permettant de ne pas se confronter aux voteurs républicain.</p>
-                      <p>Cette façon de faire est un succès, 2012 marque la première campagne de l'histoire remportée grâce au big Data. Dans les 1 milliards de données récoltées pour la campagne d’Obama, 70% venais des dons en ligne.</p>
-                      <p>Cette méthode est d'ailleurs déjà utilisée en France, notamment par le Partie Socialise en 2012 qui à utilisé cette technique à moins grande échelle mais elle leur à permis de faire voter un quatorzième des abstentionnistes. Mais dans ce cas là, les données des réseaux sociaux n’ont pas été utilisés. Les prochaines élections à venir vont sans doute dépendre de la meilleure et optimale façon d'utiliser le Big data.</p>
+                          <img class="img6" src="images/obama.jpg"/>
+                      <p>Grâce aux données  américaines, les équipes du président américain Barack Obama pour les élections de 2012 ont influé le cours de l'histoire.
+                      En utilisant le Big Data, le parti démocrate à mieux cibler les "indécis" pour s'assurer d'obtenir leurs votes.
+                      Cette étude des données leur à permis à permis d'éviter une augmentation des votes pour le parti républicain.
+                      Comment les équipes de l'actuel président américain se sont ils pris pour gagner les élections ?
+                      L'analyse de tous les réseaux sociaux, à permis un ciblage des votants pour le parti de Barack Obama pour  leurs proposer d'effectuer des dons afin de soutenir le parti en question.
+                      Sans négliger le fait que  la campagne très agressive de l'équipe de Barack Obama à aussi permit ce miracle.
+                      Ville par ville, quartier par quartier, maison par maison, les détracteurs étaient présent et grâce à l’utilisation du Big data et donc les données de géolocalisation, leurs déplacements étais optimisés permettant de ne pas se confronter aux voteurs républicain.
+                      Cette façon de faire est un succès, 2012 marque la première campagne de l'histoire remportée grâce au big Data. Dans les 1 milliards de données récoltées pour la campagne d’Obama, 70% venais des dons en ligne.
+                      Cette méthode est d'ailleurs déjà utilisée en France, notamment par le Partie Socialise en 2012 qui à utilisé cette technique à moins grande échelle mais elle leur à permis de faire voter un quatorzième des abstentionnistes. Mais dans ce cas là, les données des réseaux sociaux n’ont pas été utilisés. Les prochaines élections à venir vont sans doute dépendre de la meilleure et optimale façon d'utiliser le Big data.</p><br><br><br><br>
+                      <p id="nivebbbb">Partie III Tutoriel php + MySql</p><br><br>
+                      <img src="images/tut.png">
+                      <p>Le code si dessous permet de créé un champ de saisit texte pour demander le nom.<br>
+                          Bien sur ce code est un peu plus poussé.<br>
+                          Le "type" et le "name" sont obligatoire. Le "placeholder" est facultatife. C'est se que vous voyer dans le champ de saisit.<br>
+                          Le value, ici est très avancé. C'est pour garder ce que l'utilisateur écrit si il na pas fait de faute.</p><br>
+                      <p>Je viens de vous parler de fautes, voici comment procéder.</p>
+                      <img src="images/tut2.png">
+                      <p>Si dans le champ saisit il y a une faute, on met un message d'erreur dans une variable.<br>
+                          Vous retrouvez bien cette varible dans l'explication précédente.</p>
+                      <p>Ainsi de suite pour les différents champs que vous voulez mettre dans votre formulaire.</p>
+                      <p>Avec un bouton qui valide le formulaire.</p>
+                      <img src="images/tut3.png">
+                      <p>Voici se que ca peu donner. Vous pouvez essayer pour bien vous rendre compte.</p>
+                      <legend>Nous avons besoin de vos informations</legend><br>
+                      <!-- formulaire d'inscription -->
+                      <form method="post" action="">
+                          <!-- champs text "nom"  si la valeur du champs texte "nom" est non vide et si l'erreur est vide alors on laisse le nom de l'utilisateur inscrit dans le champ-->
+                          <label>Nom <input type"text" name="nom" placeholder="nom"
+                              value="<?php if(isset($donnees['nom'])) echo $donnees['nom']; ?>" >
+                              <?php if(isset($erreur['nom']))echo $erreur['nom'];?></label><br>
 
+
+                          <!-- champs text "prenom"  si la valeur du champs texte "prenom" est non vide et si l'erreur est vide alors on laisse le prenom de l'utilisateur inscrit dans le champ-->
+                          <label>Prenom <input type"text" name="prenom" placeholder="prenom"
+                              value="<?php if(isset($donnees['prenom'])) echo $donnees['prenom']; ?>" >
+                              <?php if(isset($erreur['prenom']))echo $erreur['prenom'];?></label><br>
+
+                          <!-- champs text "pseudo"  si la valeur du champs texte "pseudo" est non vide et si l'erreur est vide alors on laisse le pseudo de l'utilisateur inscrit dans le champ-->
+                          <label>Pseudo <input type"text" name="pseudo" placeholder="pseudo"
+                              value="<?php if(isset($donnees['pseudo'])) echo $donnees['pseudo']; ?>" >
+                              <?php if(isset($erreur['pseudo']))echo $erreur['pseudo'];?></label><br>
+
+                          <!-- champs text "adresse"  si la valeur du champs texte "adresse" est non vide et si l'erreur est vide alors on laisse l'adresse de l'utilisateur inscrit dans le champ-->
+                          <label>Adresse <input type"text" name="adresse" placeholder="adresse"
+                              value="<?php if(isset($donnees['adresse'])) echo $donnees['adresse']; ?>" >
+                              <?php if(isset($erreur['adresse']))echo $erreur['adresse'];?></label><br>
+
+                          <!-- champs texte adresse2 -->
+                          <label>Confirmation <input type"text" name="adresse2" placeholder="confirmez votre adresse"
+                              value="<?php if(isset($donnees['adresse2'])) echo $donnees['adresse2']; ?>" >
+                              <?php if(isset($erreur['adresse2']))echo $erreur['adresse2'];?></label><br>
+
+                          <!-- champs text "mot de passe"  si la valeur du champs texte "mot de passe" est non vide et si l'erreur est vide alors on laisse le mot de passe de l'utilisateur inscrit dans le champ-->
+                          <label>mot de passe <input type"text" name="mdp" placeholder="mdp"
+                              value="<?php if(isset($donnees['mdp'])) echo $donnees['mdp']; ?>" >
+                              <?php if(isset($erreur['mdp']))echo $erreur['mdp'];?></label><br>
+
+                          <!-- champs texte mot de passe2 -->
+                          <label>Confirmation <input type"text" name="mdp2" size="22" placeholder="comfirmez votre mot de passe"
+                              value="<?php if(isset($donnees['mdp2'])) echo $donnees['mdp2']; ?>" >
+                              <?php if(isset($erreur['mdp2']))echo $erreur['mdp2'];?></label><br>
+
+                          <!--boutton de type submit qui valide le formulaire-->
+                          <input TYPE="submit" NAME="OK" VALUE=" Valider "><br>
+
+                      </form>
+                      <p>Maintenent que votre formulaire est prés rentrons dans le vif du sujet.<br>
+                          Comment interagir avec votre base de données personelle en local.<br>
+                          Pour se tutoriel il est préférable d'utiliser WAMP sous windows avec phpmyadmin comme se que j'ai fait.</p>
+                      <img src="images/tut5.png">
+                      <img src="images/tut4.png">
+                      <p>Ici, ma base de données personelle(projet_tut). Ma table se nomme "connection". Et à droite se qu'il y a dedans.<br>
+                          Maintenant que votre base est prête, on va pouvoir commencer.</p>
+                      <p>Pour pouvoir intéragir avec, il vous faut un script précis.</p>
+                      <img src="images/tut64.png">
+                      <p>Remplacer mes coordonnées par les votre bien sur.<br>De base, pour vous connecter sur phpmyadmin le nom d'utilisateur est root et sans mot de passe.</p>
+                      <p>Ensuite nous voila ou vous voulez en venir.<br>
+                          Si vous avez respecter toute les étapes si dessus tout devrais bien se passer.<br>
+                          Voila se qu'on appele une requète SQL.<br></p>
+                      <img src="images/tut7.png">
+                      <p>Elle permet d'affiche toute les données dans la table "connection".<br>
+                          Maintenant allons plus loin<br>
+                          Voici comment procéder pour mettre les informations qu'a entré l'utilisateur dans le formulaire.</p>
+                      <img src="images/tut8.png">
+                      <p>Si part exemple vous entrez sa :</p>
+                      <img src="images/ress.png">
+                      <br>Voila le resultat<br>
+                      <img src="images/res.png">
+                      <p>Et voila vous avez tout pour réussir votre propre base de données.<br>
+                          Merci d'avoir suivit se tutoriel.</p>
                   </div>
               </div>
               <nav id="three">
                   <?php include ("menu2.php"); ?>
               </nav>
+
           </div>
         </div><!--fermer le text-->
         <?php include ("footer.php"); ?>

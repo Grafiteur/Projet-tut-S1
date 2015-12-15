@@ -29,7 +29,7 @@
                       <p id="niveaa">Partie I Informations</p>
                       <p class="niva"> Présentation du rang 2 mondial du domaine de la programmation et du software </p>
                       <img class="img5" src="images/oracle.jpg"/>
-                      <p>63 761.72 milliards de dollars de capitalisation, 135.070 employer, le rachat pour 7.1 milliards de dollars de Sun Microsystems.
+                      <p>163 761.72 milliards de dollars de capitalisation, 135.070 employer, le rachat pour 7.1 milliards de dollars de Sun Microsystems.
                                   Autant d'exemple pour illustrer l'importance de la société Oracle. Il s'agit d'une société de technologie informatique mondial et américaine,
                                   dont le siège social se trouve à Redwood City, en Californie. L'entreprise se spécialise principalement dans le développement et la commercialisation
                                   de systèmes de matériels informatique et de logiciels d'entreprise. La société développe et construit des outils de développement de base de données

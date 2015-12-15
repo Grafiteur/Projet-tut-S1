@@ -56,7 +56,7 @@ header {
 
 
 
-#principal, header, #banner, #menu, #textora, #textbdd, #text, #textacc, #site_content, footer, #content_grey, nav {
+#principal, header, #banner, #menu, #textora, #textbdd, #text, #textacc, #textprop, #site_content, footer, #content_grey, nav {
 	margin-left: auto; 
  	margin-right: auto;}
 
@@ -65,30 +65,28 @@ header {
 	width: 1050px;
 }
 
-#textacc { /* retirer margin pour centrer auto */
-	background: transparent url(./images/grid.jpg) repeat;
-	border: 5px solid #000;
-	margin-top: 50px;
-	padding-right: 0;
-	position:relative;
-	z-index:2;
-	width: 990px;
+#textacc { /* hauteur texte index */
 	height: 700px;
-	border-radius: 100px 0 100px 100px; /* CSS3 */
+
 }
-#textora { /* retirer margin pour centrer auto */
-	background: transparent url(./images/grid.jpg) repeat;
-	border: 5px solid #000;
-	margin-top: 50px;
-	padding-right: 0;
-	position:relative;
-	z-index:2;
-	width: 990px;
+#textora { /* hauteur texte oracle */
+
 	height: 5000px;
-	border-radius: 100px 0 100px 100px; /* CSS3 */
+
 }
 
-#textbdd { /* retirer margin pour centrer auto */
+#textbdd { /* hauteur texte bdd */
+
+	height: 13200px;
+
+}
+#textprop { /* hauteur texte à propos */
+
+	height: 500px;
+
+}
+
+#text, #textacc, #textbdd, #textora, #textprop { /* retirer margin pour centrer auto */
 	background: transparent url(./images/grid.jpg) repeat;
 	border: 5px solid #000;
 	margin-top: 50px;
@@ -96,19 +94,6 @@ header {
 	position:relative;
 	z-index:2;
 	width: 990px;
-	height: 10400px;
-	border-radius: 100px 0 100px 100px; /* CSS3 */
-}
-
-#text { /* retirer margin pour centrer auto */
-	background: transparent url(./images/grid.jpg) repeat;
-	border: 5px solid #000;
-	margin-top: 50px;
-	padding-right: 0;
-	position:relative;
-	z-index:2;
-	width: 990px;
-	height: 700px;
 	border-radius: 100px 0 100px 100px; /* CSS3 */
 }
 
@@ -189,7 +174,10 @@ ul#nav li a /* mise en forme et coloration */{
 	-webkit-border: 500px 500px 500px 500px; /*chrome et safari vielles versions*/
 	box-shadow: 5px 5px 15px rgba(0,0,0,0.6);}
 
-
+.acc {
+	margin-left: 50px;
+	margin-top: 60px;
+}
 
 ul#nav li.actuel a, ul#nav li:hover a{
 	text-shadow: 2px 2px #898989;
@@ -326,10 +314,13 @@ ul.slideshow li.show {
 
 .img5 { /* les images de la partie écrit */
 	width:50%;
-	height:80%;
-	margin-top: -20px;
-	margin-bottom: -20px;
+	height:100%;
 	margin-left: 200px;
+}
+.img6 { /* les images de la partie écrit 2 */
+	width:70%;
+	height:80%;
+	margin-left: 100px;
 }
 
 #slideshow-caption {
@@ -473,6 +464,12 @@ p {
 }
 .centre {
 	text-align: center;
+}
+.centre1 {
+	text-align: center;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: 200px;
 }
 
 #niveaa {

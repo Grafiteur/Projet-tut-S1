@@ -16,13 +16,24 @@
             <?php include ("menu.php"); ?>
         </nav>
 
-        <div id="textacc">
+        <div id="textprop">
           <div id="wrapper">
               <div id="one">
                   <div id="oneIn"> <!-- paragraphe principal -->
 
-                      <p class="acc">Bienvenue sur DATAQUE, le site qui vous permettras d'avoir toutes les informations générales que vous souhaitez concernant les bases de données.
-                          Aujourd'hui les données, considérées comme le pétrole du 21ème siècle, sont au coeur du monde suite à l'explosion du domaine numérique qui ne cesse d'évoluer rapidement, une évolution qui est difficile de suivre en temps réel, notre site vous propose alors d'en apprendre plus sur les idées générales des bases de données. Définissant les bases de données et son historique dans un premier temps , passant par l'impact économique des bases de données ou même encore en EXCLUSIVITÉ l'interview d'un salarié d' <cite>« oracle »</cite> l'une des plus grande entreprise concernant les systèmes de gestion de bases données !</p>
+                      <br><p class="centre1">IUT de Belfort-Montbéliard</p>
+                      <p class="centre1">Projet tutoré du semestre 1</p>
+                      <p class="centre1">Site créé par :</p>
+                      <p class="centre1">Jordan LAPLACE (chef de projet)</p>
+                      <p class="centre1">Bilal CHAABAN</p>
+                      <p class="centre1">Quentin HERVY</p>
+                      <p class="centre1">David STORTI</p><br>
+                      <p class="centre1">Nous remercions pour leur aide et soutiens :</p>
+                      <p class="centre1">Ibrahim HAMDAN</p>
+                      <p class="centre1">Corinne PATERLINI</p>
+                      <p class="centre1">Thierry SAHLER</p>
+                      <p class="centre1">David TRANNOY</p>
+
 
                   </div>
               </div>
